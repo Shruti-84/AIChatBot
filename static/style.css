@@ -1,0 +1,121 @@
+/* Full-screen chatbot layout */
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #2c3e50, #000000);
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 90%;
+    height: 92vh;
+    max-width: 900px;
+    background: #ffffff10;
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #ffffff30;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-bottom: 10px;
+}
+
+#clearChat {
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    background: #ff4747;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clearChat:hover {
+    background: #e63636;
+}
+
+/* Chat area */
+.chat-box {
+    flex-grow: 1;
+    background: #ffffff15;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Messages */
+.msg {
+    max-width: 80%;
+    padding: 12px 15px;
+    border-radius: 15px;
+    line-height: 1.5;
+    color: white;
+    animation: slideUp 0.4s ease-out;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background: #4aa3ff;
+}
+
+.bot-msg {
+    align-self: flex-start;
+    background: #444444;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#userInput {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+#sendBtn {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #4aa3ff;
+    color: white;
+    transition: 0.3s;
+}
+
+#sendBtn:hover {
+    background: #2c82d8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

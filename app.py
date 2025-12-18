@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
-
-load_dotenv()  # load keys from .env
+load_dotenv(dotenv_path=".env") 
+#load_dotenv()  # load keys from .env
 app = Flask(__name__)
 
 # Configure your Gemini Flash API key
@@ -19,7 +19,7 @@ def chat():
         return jsonify({"error": "No message received"})
 
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash-lite")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         response = model.generate_content(user_msg)
         reply = response.text
         return jsonify({"reply": reply})
